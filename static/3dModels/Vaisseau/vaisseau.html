@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <!--<style>
+      .ui button {
+        position: absolute;
+        border: none;
+        background-color: rgba(0,0,0,0.5);
+        color: white;
+        cursor: pointer;
+        width: 45px;
+        height: 45px;
+        border-radius: 5px;
+        box-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+      }
+      .ui button i {
+        font-size: 2em;
+      }
+      .ui button:nth-child(1) { /* left */
+        right: 15px;
+        bottom: 65px;
+      }
+      .ui button:nth-child(2) { /* right */
+        right: 115px;
+        bottom: 65px;
+      }
+      .ui button:nth-child(3) { /* down */
+        right: 65px;
+        bottom: 15px;
+      }
+      .ui button:nth-child(4) { /* up */
+        right: 65px;
+        bottom: 115px;
+      }
+    </style>-->
+  </head>
+  <body>
+    <a-scene vr-mode-ui="enabled: false">
+      <a-assets>
+        <a-asset-item id="create-obj" src="vaisseau.obj"></a-asset-item>
+        <a-asset-item id="create-mtl" src="vaisseau.mtl"></a-asset-item>
+      </a-assets>
+
+      <a-entity light="type: ambient; color: #BBB"></a-entity>
+      <a-camera position="0 0.5 0" fov="40" look-controls-enabled="false" wasd-controls-enabled="false"></a-camera>
+
+      <a-obj-model id="model" src="#create-obj" mtl="#create-mtl" position="0 0 -4" rotation="0 0 0" look-controls></a-obj-model>
+      <!--<a-plane position="0 0 -3" rotation="-90 0 0" width="4" height="4" color="#9BE8C4" shadow></a-plane>-->
+      <a-sky color="#E0E0E0"></a-sky>
+    </a-scene>
+    <!--<div class="ui">
+      <button onmousedown="rotRToggle(true)" onmouseup="rotRToggle(false)" onblur="rotRToggle(false)"><i class="fas fa-chevron-right"></i></button>
+      <button onmousedown="rotLToggle(true)" onmouseup="rotLToggle(false)" onblur="rotLToggle(false)"><i class="fas fa-chevron-left"></i></button>
+      <button onmousedown="rotUToggle(true)" onmouseup="rotUToggle(false)" onblur="rotUToggle(false)"><i class="fas fa-chevron-down"></i></button>
+      <button onmousedown="rotDToggle(true)" onmouseup="rotDToggle(false)" onblur="rotDToggle(false)"><i class="fas fa-chevron-up"></i></button>
+    </div>
+    <script>
+      let model = document.getElementById('model')
+      let rotSpeed = 0.5
+      let rotR = false
+      let rotU = false
+      let rotL = false
+      let rotD = false
+
+      function rotRToggle (val) {
+        rotR = val
+      }
+      function rotLToggle (val) {
+        rotL = val
+      }
+      function rotUToggle (val) {
+        rotU = val
+      }
+      function rotDToggle (val) {
+        rotD = val
+      }
+
+      function rotateRight () {
+        model.setAttribute('rotation', model.getAttribute('rotation').x + ' ' + (model.getAttribute('rotation').y + rotSpeed) + ' ' + model.getAttribute('rotation').z)
+      }
+      function rotateLeft () {
+        model.setAttribute('rotation', model.getAttribute('rotation').x + ' ' + (model.getAttribute('rotation').y - rotSpeed) + ' ' + model.getAttribute('rotation').z)
+      }
+      function rotateUp () {
+        model.setAttribute('rotation', model.getAttribute('rotation').x + ' ' + model.getAttribute('rotation').y + ' ' + (model.getAttribute('rotation').z + rotSpeed))
+      }
+      function rotateDown () {
+        model.setAttribute('rotation', model.getAttribute('rotation').x + ' ' + model.getAttribute('rotation').y + ' ' + (model.getAttribute('rotation').z - rotSpeed))
+      }
+
+      setInterval(function () {
+        if (rotR) {
+          rotateRight()
+        }
+        if (rotL) {
+          rotateLeft()
+        }
+        if (rotU) {
+          rotateUp()
+        }
+        if (rotD) {
+          rotateDown()
+        }
+      }, 10)
+    </script>-->
+  </body>
+</html>
